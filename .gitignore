@@ -1,0 +1,10 @@
+pkg/*
+doc/*
+rdoc/*
+*.gem
+.bundle
+Gemfile.lock
+.gh_pages
+coverage/
+*#*
+*~
