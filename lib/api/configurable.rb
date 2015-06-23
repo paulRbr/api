@@ -5,6 +5,8 @@ module Api
   module Configurable
     # @!attribute [w] access_token
     #   @return [String] access token for authentication
+    # @!attribute [w] access_token_prefix
+    #   @return [String] access token prefix used before token in Authorization header
     # @!attribute api_endpoint
     #   @return [String] Base URL for API requests.
     # @!attribute api_version
@@ -23,7 +25,7 @@ module Api
     # @!attribute per_page
     #   @return [String] Configure page size for paginated results. API default: 30
 
-    attr_accessor :access_token, :basic_login, :basic_password, :connection_options, :user_agent, :auto_paginate, :per_page
+    attr_accessor :access_token, :access_token_prefix, :basic_login, :basic_password, :connection_options, :user_agent, :auto_paginate, :per_page
     attr_writer :api_endpoint, :api_version
 
     class << self
@@ -33,6 +35,7 @@ module Api
       def keys
         @keys ||= [
           :access_token,
+          :access_token_prefix,
           :api_endpoint,
           :api_version,
           :auto_paginate,

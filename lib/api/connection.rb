@@ -107,7 +107,7 @@ module Api
         if basic_authenticated?
           http.basic_auth(@basic_login, @basic_password)
         elsif token_authenticated?
-          http.authorization 'token', @access_token
+          http.authorization @access_token_prefix || 'token', @access_token
         end
       end
     end

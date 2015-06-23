@@ -17,6 +17,12 @@ module Api
         ENV['API_ACCESS_TOKEN']
       end
 
+      # Default access token prefix
+      # @return [String]
+      def access_token_prefix
+        "token"
+      end
+
      # Default API endpoint from ENV
       # @return [String]
       def api_endpoint
