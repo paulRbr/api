@@ -23,6 +23,20 @@ describe Api::Client do
     end
   end
 
+  describe ".inspect" do
+    before do
+      @client = Api::Client.new(access_token: "token123", basic_password: "mysecret")
+    end
+
+    it "masks access token" do
+      expect(@client.inspect).to_not match("token123")
+    end
+
+    it "masks basic auth password" do
+      expect(@client.inspect).to_not match("mysecret")
+    end
+  end
+
   describe "A client implementation" do
     before do
       module MyApi
