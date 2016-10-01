@@ -18,6 +18,9 @@ module Api
     # @!attribute connection_options
     #   @see https://github.com/lostisland/faraday
     #   @return [Hash] Configure connection options for Faraday
+    # @!attribute sawyer_options
+    #   @see https://github.com/lostisland/sawyer
+    #   @return [Hash] Configure sawyer options
     # @!attribute user_agent
     #   @return [String] Configure User-Agent header for requests.
     # @!attribute auto_paginate
@@ -25,7 +28,7 @@ module Api
     # @!attribute per_page
     #   @return [String] Configure page size for paginated results. API default: 30
 
-    attr_accessor :access_token, :access_token_prefix, :basic_login, :basic_password, :connection_options, :user_agent, :auto_paginate, :per_page
+    attr_accessor :access_token, :access_token_prefix, :basic_login, :basic_password, :connection_options, :sawyer_options, :user_agent, :auto_paginate, :per_page
     attr_writer :api_endpoint, :api_version
 
     class << self
@@ -42,6 +45,7 @@ module Api
           :basic_login,
           :basic_password,
           :connection_options,
+          :sawyer_options,
           :per_page,
           :user_agent,
         ]

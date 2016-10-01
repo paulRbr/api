@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Api::Client do
   before do
     VCR.turn_off!
+    allow(Sawyer::LinkParsers::Simple).to receive(:new).and_return(Sawyer::LinkParsers::Simple)
     @client = Api::Client.new
   end
 

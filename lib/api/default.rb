@@ -53,13 +53,21 @@ module Api
         ENV['API_PASSWORD']
       end
 
-       # Default options for Faraday::Connection
+      # Default options for Faraday::Connection
       # @return [Hash]
       def connection_options
         {
           :headers => {
             :user_agent => user_agent
           }
+        }
+      end
+
+      # Default options for Sawyer::Agent
+      # @return [Hash]
+      def sawyer_options
+        {
+          :links_parser => Sawyer::LinkParsers::Simple.new
         }
       end
 

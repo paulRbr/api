@@ -107,7 +107,7 @@ module Api
         if basic_authenticated?
           http.basic_auth(@basic_login, @basic_password)
         elsif token_authenticated?
-          http.authorization @access_token_prefix || 'token', @access_token
+          http.authorization @access_token_prefix, @access_token
         end
       end
     end
@@ -161,9 +161,7 @@ module Api
     end
 
     def sawyer_options
-      opts = {
-        :links_parser => Sawyer::LinkParsers::Simple.new
-      }
+      opts = @sawyer_options
       conn_opts = @connection_options
       opts[:faraday] = Faraday.new(conn_opts)
 
