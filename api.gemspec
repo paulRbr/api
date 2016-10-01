@@ -2,7 +2,7 @@ $LOAD_PATH.push File.expand_path('../lib', __FILE__)
 require 'api/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'api'
+  s.name        = 'apii'
   s.licenses    = ['MIT']
   s.version     = Api::VERSION
   s.platform    = Gem::Platform::RUBY
