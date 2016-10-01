@@ -9,13 +9,13 @@ This gem is a generic client for HTTP based APIs.
 You can use this gem in your project by specifying it in your `Gemfile`:
 
 ```
-gem "api"
+gem "apii"
 ```
 
 or simply install it via the CLI:
 
 ```
-gem install api
+gem install apii
 ```
 
 ## Usage
